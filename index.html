@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Say</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Simon Game</h1>
+        <div class="header-autor">            
+            <img src="./img/icons8-github-90.png">
+            <a>Geov94</a>
+        </div>
+        
+    </header>
+    <main class="central-zone">
+        <aside class="marcadores"> 
+            <form class="marcadores-form">
+                <label class="marcadores-form--label">Nivel</label>
+                <p class="marcadores-form--texto">0</p>
+            </form>
+
+            <form class="marcadores-form">
+                <label class="marcadores-form--label">Puntaje</label>
+                <p class="marcadores-form--texto">0</p>
+            </form>
+
+        </aside>
+
+        <div class="rigthScreen">
+            <button id="btnStart" class="btn-start" onclick="startGame()">Press Start To Play</button>
+            <div class="gameboard">
+                <div id="blue" class="color blue left" data-color="blue"></div>
+                <div id="yellow" class="color yellow right" data-color="yellow"></div>
+                <div id="green" class="color green left" data-color="green"></div>
+                <div id="red" class="color red right" data-color="red"></div>
+                
+    
+            </div>
+
+        </div>
+       
+    </main>
+    <footer class="footer">soy un footer</footer>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

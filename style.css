@@ -1,0 +1,266 @@
+:root{
+    --gradient:  radial-gradient(circle at 50% 50%, #003c4f 0, #003948 6.25%, #003540 12.5%, #033137 18.75%, #092b2f 25%, #0d2526 31.25%, #0f1e1e 37.5%, #0f1716 43.75%, #0c0c0c 50%, #080001 56.25%, #030000 62.5%, #000000 68.75%, #000000 75%, #000000 81.25%, #000000 87.5%, #000000 93.75%, #000000 100%);
+    --white: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    width: 100vw;
+    height: 7vh;
+    background: var(--gradient);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header h1{
+    margin-right: 20px;
+    font-size: 50px;
+    color: var(--white);
+}
+.header img {
+    width: 35%;
+    position:relative;
+    right: 0;
+    color: var(--white);
+}
+
+.header a{
+    position:relative;
+    right: 0;
+    color: var(--white);
+}
+.header-autor{
+    height: 100%;  
+    display: flex;
+    align-items: center;
+    
+
+}
+.central-zone{
+    width: 100%;
+    height: 83vh;
+    display: flex;
+    
+  
+}
+
+.footer{
+    width: 100%;
+    height: 10vh;
+    background: var(--gradient);
+}
+
+.marcadores {
+    width: 25vw;
+    background: var(--gradient);
+
+}
+
+.rigthScreen {
+    width: 80vw;
+    background: rgb(F3F3F3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.marcadores{
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    justify-content: space-evenly;
+   
+}
+
+.marcadores-form{
+    border: 2px solid white;
+    border-radius:7px;
+    width: 80%;
+    height: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.marcadores-form--label{
+    font-size: 35px;
+    color: var(--white);
+}
+
+.marcadores-form--texto{
+    font-size: 25px;
+    color: var(--white);
+}
+/* el juego */
+.gameboard{
+    height: 100vh;
+    width: 100vh;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    max-height: 70vh;
+    max-width: 70vh;    
+    
+   
+          
+   
+}
+
+.color{
+    width: 50%;
+    height: 50%;
+    display:inline-block;
+   
+}
+
+.left{
+    float:left;
+}
+
+.right{
+    float:left;
+}
+
+.blue{
+    background: #162BEE ;
+    
+
+}
+
+.blue.light{
+    background:lightskyblue ;
+    
+}
+
+.yellow{
+    background: #F6F700;
+}
+
+.yellow.light{
+    background: lightgoldenrodyellow;
+}
+
+.green{
+    background:#0DAE1A ;
+
+}
+
+.green.light{
+    background: lightgreen ;
+}
+
+.red{
+    background: #FA0B2E;
+}
+
+.red.light{
+    background: lightcoral;
+}
+
+.btn-start{
+    width: 370px;
+    height: 100px;
+    border-radius: 50px;
+    background: white;
+    color: coral;
+    font-size: 2.5rem;
+    position: absolute;
+    
+    
+}
+
+.hide{
+    display: none;
+}
+
+
+/*fin del juego*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:640px){
+    .header{
+        display: flex;
+        justify-content: center;
+    }
+    .header h1{
+      
+        font-size: 20px;
+    }
+    .footer{
+      display: none;
+    }
+    .central-zone{
+        height: 93vh;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .marcadores{
+        height: 15vh;
+        width: 100%;
+        
+    }    
+    .rigthScreen{
+        width: 100%;
+        height: 85vh;
+    }
+
+    .marcadores{
+        display: flex;        
+        flex-direction: row;   
+            
+    }
+
+    .marcadores-form{
+        display: flex;        
+        flex-direction: row;  
+        width: 40%;
+        height: 40%;
+            
+    }
+    .marcadores-form--label{
+        font-size: 20px;
+    }
+
+    .marcadores-form--texto{
+        font-size: 20px;
+    }
+}

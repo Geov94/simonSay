@@ -1,6 +1,8 @@
 :root{
     --gradient:  radial-gradient(circle at 50% 50%, #003c4f 0, #003948 6.25%, #003540 12.5%, #033137 18.75%, #092b2f 25%, #0d2526 31.25%, #0f1e1e 37.5%, #0f1716 43.75%, #0c0c0c 50%, #080001 56.25%, #030000 62.5%, #000000 68.75%, #000000 75%, #000000 81.25%, #000000 87.5%, #000000 93.75%, #000000 100%);
     --white: white;
+    --g1:  linear-gradient(90deg, rgba(37,82,136,1) 4%, rgba(4,9,23,1) 95%);
+    --g2:linear-gradient(rgba(4,9,23,1) 100%, rgba(37,82,136,1) 15%);
 }
 *{
     margin: 0;
@@ -11,7 +13,7 @@
 .header{
     width: 100vw;
     height: 7vh;
-    background: var(--gradient);
+    background: var(--g1);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -27,13 +29,23 @@
     position:relative;
     right: 0;
     color: var(--white);
+    margin-right: 10px;
 }
 
 .header a{
     position:relative;
     right: 0;
     color: var(--white);
+    font-size: 20px;
+    text-decoration: none;
 }
+
+.header a:hover{
+    cursor: pointer;
+    color: blueviolet;
+}
+
+
 .header-autor{
     height: 100%;  
     display: flex;
@@ -49,24 +61,20 @@
   
 }
 
-.footer{
-    width: 100%;
-    height: 10vh;
-    background: var(--gradient);
-}
 
 .marcadores {
     width: 25vw;
-    background: var(--gradient);
+    background: var(--g1);
 
 }
 
 .rigthScreen {
     width: 80vw;
-    background: rgb(F3F3F3);
+    background: var(--g2);
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
 }
 .marcadores{
@@ -168,15 +176,50 @@
     height: 100px;
     border-radius: 50px;
     background: white;
-    color: coral;
+    color: rgba(37,82,136,1);
     font-size: 2.5rem;
     position: absolute;
     
     
 }
 
+.btn-start:hover{
+    color: lightsteelblue;
+    cursor: pointer;
+
+
+}
+
 .hide{
     display: none;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background: var(--g1);
+}
+
+
+
+.footer img {
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 45px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.footer a{
+    font-size: 20px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.footer a:hover{
+    cursor: pointer;
+    color: yellowgreen;
 }
 
 

@@ -1,9 +1,14 @@
-const blue     = document.getElementById('blue')
-const yellow   = document.getElementById('yellow')
-const green    = document.getElementById('green')
-const red      = document.getElementById('red')
-const btnStart = document.getElementById('btnStart')
-const lastLevel = 2
+const blue      = document.getElementById('blue')
+const yellow    = document.getElementById('yellow')
+const green     = document.getElementById('green')
+const red       = document.getElementById('red')
+const btnStart  = document.getElementById('btnStart')
+const lastLevel = 10
+const levelGame = document.getElementById('levelG')
+const scoreGame = document.getElementById('score')
+let countLevel = 1;
+let countScore = 0;
+
 
 
 
@@ -51,6 +56,7 @@ class Game {
         this.sublevel= 0
         this.illuminateSequence()
         this.addEventsClick()
+        
     }
 
     numberToColor(number){
@@ -110,6 +116,7 @@ class Game {
         this.colors.yellow.removeEventListener('click',this.chooseColor)
         this.colors.green.removeEventListener('click',this.chooseColor)
         this.colors.red.removeEventListener('click',this.chooseColor)
+        
 
 
     }
@@ -130,7 +137,9 @@ class Game {
             }
           }
       } else {
+          levelGame.innerText=0;  
           this.loseGame()
+          this.start()
       }
       
     }   
@@ -146,7 +155,7 @@ class Game {
         swal('Sorry','You lose 😢 !','error')
           .then(()=>{
             this.deleteEventsClick()
-            this.start()
+            
               
           })
     }
@@ -156,5 +165,6 @@ class Game {
 }
 
 function startGame (){
+   levelGame.innerText=countLevel;
    window.game = new Game ()
 }

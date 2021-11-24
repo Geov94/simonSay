@@ -3,7 +3,7 @@ const yellow    = document.getElementById('yellow')
 const green     = document.getElementById('green')
 const red       = document.getElementById('red')
 const btnStart  = document.getElementById('btnStart')
-const lastLevel = 10
+const lastLevel = 3
 const levelGame = document.getElementById('levelG')
 const scoreGame = document.getElementById('score')
 let countLevel = 1;
@@ -56,6 +56,7 @@ class Game {
         this.sublevel= 0
         this.illuminateSequence()
         this.addEventsClick()
+     
         
     }
 
@@ -87,6 +88,7 @@ class Game {
     illuminateSequence(){
         for (let i=0;i<this.level;i++){
             const color = this.numberToColor(this.sequence[i]);
+            levelGame.innerText=[i+1];
             console.log(color)
              setTimeout(()=> this.illuminateColor(color),1000*i) 
 
@@ -110,12 +112,15 @@ class Game {
         this.colors.yellow.addEventListener('click',this.chooseColor)
         this.colors.green.addEventListener('click',this.chooseColor)
         this.colors.red.addEventListener('click',this.chooseColor)
+        
+
     }
     deleteEventsClick(){
         this.colors.blue.removeEventListener('click',this.chooseColor)
         this.colors.yellow.removeEventListener('click',this.chooseColor)
         this.colors.green.removeEventListener('click',this.chooseColor)
         this.colors.red.removeEventListener('click',this.chooseColor)
+        
         
 
 
@@ -126,8 +131,13 @@ class Game {
       this.illuminateColor(nameColor)
       if(numberColor === this.sequence[this.sublevel]){
           this.sublevel++;
+          countScore+=5;
           if(this.sublevel===this.level){
               this.level++
+              
+              
+                           
+            
               this.deleteEventsClick()
             if(this.level === (lastLevel+1)){
                 this.winGame()
@@ -136,17 +146,19 @@ class Game {
                 setTimeout( this.nextLevel,1500)
             }
           }
-      } else {
-          levelGame.innerText=0;  
+      }else {
+         
           this.loseGame()
-          this.start()
-      }
-      
+          
+       }
+      scoreGame.innerText = countScore;
     }   
     winGame(){
         swal('Congratulations','You Win 🤩!!','success')
           .then(()=>{
             this.start()
+            levelGame.innerText=0;
+            scoreGame.innerText = 0;
               
           })
     }
@@ -155,6 +167,10 @@ class Game {
         swal('Sorry','You lose 😢 !','error')
           .then(()=>{
             this.deleteEventsClick()
+            levelGame.innerText=0;
+            countScore = 0;
+            scoreGame.innerText = 0;
+            this.start()
             
               
           })
@@ -165,6 +181,8 @@ class Game {
 }
 
 function startGame (){
-   levelGame.innerText=countLevel;
+   
+   countScore=0;
+   
    window.game = new Game ()
 }

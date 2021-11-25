@@ -8,6 +8,7 @@ const levelGame = document.getElementById('levelG')
 const scoreGame = document.getElementById('score')
 let countLevel = 1;
 let countScore = 0;
+let booleanColor = true;
 
 const clickColor = document.getElementById('clickColor')
 const light      = document.getElementById('light')
@@ -59,9 +60,11 @@ class Game {
     }
 
     nextLevel(){
+        booleanColor=true;
         this.sublevel= 0
         this.illuminateSequence()
         this.addEventsClick()
+
      
         
     }
@@ -98,21 +101,30 @@ class Game {
     illuminateSequence(){
         
         for (let i=0;i<this.level;i++){
-            const color = this.numberToColor(this.sequence[i]);
+            const color = this.numberToColor(this.sequence[i]);          
             
             levelGame.innerText=[i+1];
             console.log(color)
-             setTimeout(()=> this.illuminateColor(color),1000*i) 
+             setTimeout(()=> this.illuminateColor(color)
+             ,1000*i) 
+
+            
              
 
         }
+        
       
     }
 
     illuminateColor(color){
+        if (booleanColor===true){
+         light.play()
+
+        }
+        
         this.colors[color].classList.add('light')              
         setTimeout(()=> this.offColor(color),350)
-        light.play();
+        
         
       
     }
@@ -145,13 +157,15 @@ class Game {
     chooseColor(ev){
 
      
-      clickColor.play()
+      
       const nameColor   = ev.target.dataset.color;
       const numberColor = this.ColorToNumber(nameColor)
+      booleanColor=false;
       this.illuminateColor(nameColor)
       if(numberColor === this.sequence[this.sublevel]){
           this.sublevel++;          
           countScore+=5;
+          clickColor.play()
           
           if(this.sublevel===this.level){
               this.level++             

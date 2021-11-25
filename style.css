@@ -258,7 +258,7 @@
 
 
 
-@media (max-width:640px){
+@media (max-width:750px){
     .header{
         display: flex;
         justify-content: center;
@@ -305,5 +305,16 @@
 
     .marcadores-form--texto{
         font-size: 20px;
+    }
+
+    .gameboard {
+        width: 70%;
+        
+    }
+
+    .btn-start{
+        width: 50%;
+        font-size: 165%;
+        font-weight: bold;
     }
 }

@@ -3,7 +3,7 @@ const yellow    = document.getElementById('yellow')
 const green     = document.getElementById('green')
 const red       = document.getElementById('red')
 const btnStart  = document.getElementById('btnStart')
-const lastLevel = 3
+const lastLevel = 10
 const levelGame = document.getElementById('levelG')
 const scoreGame = document.getElementById('score')
 let countLevel = 1;
@@ -189,7 +189,7 @@ class Game {
     }   
     winGame(){
         winGameM.play();
-        swal('Congratulations','You Win 🤩!!','success')
+        swal('Congratulations','You Win 🤩!!\n'+' \n Score : '+countScore+' pts','success')
           .then(()=>{
             this.start()
             levelGame.innerText=0;
@@ -201,7 +201,7 @@ class Game {
 
     loseGame(){
         loseGameM.play();
-        swal('Sorry','You lose 😢 !','error')
+        swal('Sorry','You lose 😢 !\n'+' \n Score : '+countScore+' pts','error')
           .then(()=>{
             this.deleteEventsClick()
             levelGame.innerText=0;
